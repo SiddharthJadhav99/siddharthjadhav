@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://siddharthjadhav.in/sitemap.xml
