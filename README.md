@@ -1,17 +1,21 @@
 # siddharthjadhav.in
 
-Note: case study wording was written from your resume. Read every card and its detail text, and adjust anything that isn't accurate or that your employer would consider confidential.
+Plain HTML, CSS and JavaScript. No build step and no dependencies.
 
-Personal site of Siddharth Jadhav. Plain HTML, CSS and JavaScript: no build step, no dependencies, no framework. It deploys anywhere and loads fast.
+## Files
 
-## What's inside
-
-| File | What it is |
+| Path | What it is |
 | --- | --- |
-| `index.html` | Page structure and most text (hero, numbers, experience, skills, contact). |
-| `main.js` | The **projects list** (top of the file), the live Kafka simulation, animations, case-study popup, timeline, theme toggle. |
-| `styles.css` | All styling. Colors are at the top under `:root` (light) and the two dark blocks below it. |
-| `favicon.svg`, `404.html`, `_headers`, `robots.txt`, `sitemap.xml` | Icon, not-found page, security headers, search engine files. |
+| `index.html` | Home: hero, selected work with live demos, more work, approach, experience, contact |
+| `work/project-spring.html` | Case study: AI agent for new-hire IT provisioning (Hershey) |
+| `work/ngs-rsc.html` | Case study: offline-first field sales app (Hershey) |
+| `work/compliance-events.html` | Case study: compliance event processing (TraceLink) |
+| `styles.css` | All styling. Colors and fonts are tokens at the top |
+| `main.js` | Theme, scroll effects, crosshair, and the three demos (agent workflow, offline queue, partitions) |
+| `Siddharth-Jadhav-Resume.pdf` | Resume with the phone number removed |
+| `404.html`, `_headers`, `robots.txt`, `sitemap.xml`, `favicon.svg` | Supporting files |
+
+Links use clean URLs (`/work/ngs-rsc`). Cloudflare Pages serves `work/ngs-rsc.html` at that address automatically.
 
 ## Preview locally
 
@@ -19,32 +23,18 @@ Personal site of Siddharth Jadhav. Plain HTML, CSS and JavaScript: no build step
 npx serve .
 ```
 
-Then open the address it prints. Opening `index.html` directly also works.
+`serve` supports clean URLs. Opening `index.html` directly works too, but the case study links need a server.
 
-## Deploy (Cloudflare)
+## Deploy on Cloudflare
 
-1. Push this folder to a new GitHub repo:
-   ```
-   git init && git add . && git commit -m "New portfolio"
-   git branch -M main
-   git remote add origin https://github.com/SiddharthJadhav99/portfolio.git
-   git push -u origin main
-   ```
-2. Cloudflare dashboard → **Workers & Pages** → **Create** → **Pages** → **Connect to Git** → pick the repo.
-3. Framework preset **None**, build command **empty**, output directory **/**. Deploy.
-4. Check the `*.pages.dev` link.
-5. In **DNS → Records**, delete old Netlify records (A record `75.2.60.5` or CNAME ending `netlify.app`).
-6. In the project's **Custom domains**, add `siddharthjadhav.in` and `www.siddharthjadhav.in`.
-
-Every `git push` after that redeploys within a minute.
+1. Push this folder to a GitHub repo.
+2. Cloudflare: Workers & Pages → Create → Pages → Connect to Git → pick the repo.
+3. Framework preset: None. Build command: empty. Output directory: `/`.
+4. Add the custom domains `siddharthjadhav.in` and `www.siddharthjadhav.in`.
 
 ## Editing
 
-- **Projects:** edit the `projects` array at the top of `main.js`. Each one has a card (title, desc, big number) and a case study (problem, approach, outcome, stats). Set `featured: true` on the two you want shown large.
-- **Before publishing, check the Hershey and TraceLink case studies** against your employer's rules on what you may share publicly. They only use figures from your resume, but you know best what's public.
-- **Email:** replace `siddharthjadhav3004@gmail.com` in `index.html` (twice) with `hi@siddharthjadhav.in` once Cloudflare Email Routing is set up.
-- **New job:** add it to the `career` list in `main.js` and as a new `<details class="role">` block in `index.html`.
-- **Accent color:** change `--accent` in `styles.css` (light and dark values).
-- **Link preview image:** add a 1200×630 `og.png` and `<meta property="og:image" content="https://siddharthjadhav.in/og.png">` in `<head>`.
-
-Motion respects the visitor's "reduce motion" setting: animations are skipped and the simulation shows a still frame.
+- **Text on case study pages:** edit the HTML in `work/` directly. Every metric marked `est.` is an estimate from the architecture, not a benchmark. Keep that label if you change the number.
+- **Demo numbers:** the agent demo's calls and timings are in the `AGENT` object in `main.js`.
+- **Email:** replace `siddharthjadhav3004@gmail.com` in all four HTML pages once `hi@siddharthjadhav.in` works.
+- **Resume:** replace `Siddharth-Jadhav-Resume.pdf` with a newer copy. Keep your phone number out of the public file.

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Compliance event processing, Siddharth Jadhav</title>
+  <meta name="description" content="Siddharth Jadhav’s work at TraceLink on compliance APIs and Kafka event processing for the pharmaceutical supply chain.">
+  <meta name="theme-color" content="#ECEEEA" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0E1012" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://siddharthjadhav.in/work/compliance-events">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://siddharthjadhav.in/work/compliance-events">
+  <meta property="og:title" content="Compliance event processing">
+  <meta property="og:description" content="Siddharth Jadhav’s work at TraceLink on compliance APIs and Kafka event processing for the pharmaceutical supply chain.">
+  <meta name="twitter:card" content="summary">
+  <script>document.documentElement.classList.add('js');try{const t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/main.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="progress" aria-hidden="true"><span id="progress"></span></div>
+  <header class="nav" id="nav">
+    <div class="wrap nav__inner">
+      <a class="nav__mark" href="/" aria-label="Siddharth Jadhav, home"><span class="nav__glyph" aria-hidden="true">SJ</span><span class="hide-sm">Siddharth Jadhav</span></a>
+      <nav aria-label="Site">
+        <ul class="nav__links">
+          <li><a href="/#work" aria-current="true">Work</a></li>
+          <li class="hide-sm"><a href="/#principles">Approach</a></li>
+          <li><a href="/#experience">Experience</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme" id="theme" type="button" aria-label="Switch to dark theme"><span class="theme__dot" aria-hidden="true"></span></button>
+    </div>
+  </header>
+  <main id="main">
+    <header class="cs-hero wrap">
+      <a class="back" href="/#work"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> All work</a>
+      <p class="cs-kicker">TraceLink, 2023 to 2026</p>
+      <h1 class="cs-title">Compliance event processing for the pharmaceutical supply chain</h1>
+      <p class="cs-lede">TraceLink connects pharmaceutical manufacturers, distributors and pharmacies, and helps them report to regulators. As a Software Engineer II I built the APIs and event processing behind country compliance reporting, where a lost or duplicated message is a compliance problem rather than just a bug.</p>
+      <dl class="facts"><div><dt>Role</dt><dd>Software Engineer II</dd></div><div><dt>Domain</dt><dd>Pharma supply chain compliance</dd></div><div><dt>Scale</dt><dd>800K+ reports a week</dd></div><div><dt>Stack</dt><dd>Java, Spring, Kafka, GraphQL, Node.js, Scala</dd></div></dl>
+    </header>
+    <div class="wrap cs-demo"><div class="demo" data-demo="partitions">
+          <div class="demo__bar">
+            <p class="demo__title">Mixed message sizes: 75% small, 20% medium, 5% large</p>
+            <div class="seg" role="group" aria-label="Partitioning">
+              <button type="button" data-mode="single" aria-pressed="true">One partition</button>
+              <button type="button" data-mode="grouped" aria-pressed="false">Grouped</button>
+            </div>
+          </div>
+          <div class="demo__body">
+            <canvas class="lanes" aria-label="Animation of messages queuing behind a worker. With grouping, large messages move to their own lane." role="img"></canvas>
+            <div class="meters">
+              <div class="meter"><span class="meter__k">Measured throughput</span><span class="meter__v" data-m="tput">18K/h</span></div>
+              <div class="meter"><span class="meter__k">Measured latency</span><span class="meter__v" data-m="lat">Baseline</span></div>
+              <div class="meter"><span class="meter__k">Avg wait in this model</span><span class="meter__v" data-m="wait">0.0 s</span></div>
+            </div>
+          </div>
+          <div class="demo__foot"><p class="demo__note" aria-live="polite"></p></div>
+        </div></div>
+    <div class="wrap cs-body">
+      <nav class="toc" aria-label="On this page" data-spy><ol><li><a href="#context">Context</a></li><li><a href="#latency">Faster processing with partition grouping</a></li><li><a href="#apis">Compliance reporting APIs</a></li><li><a href="#quality">Data quality</a></li><li><a href="#reliability">Reliability and audit</a></li><li><a href="#results">Results</a></li></ol></nav>
+      <div class="prose"><section id="context" aria-labelledby="context-h"><h2 id="context-h">Context</h2><p>Pharmaceutical companies must report transactions to regulators in each country, on time, exactly once, and at high volume. The systems I worked on take those transactions in, enrich and validate them, and submit reports to regulatory and order management systems downstream.</p></section><section id="latency" aria-labelledby="latency-h"><h2 id="latency-h">Faster processing with partition grouping</h2><p>Messages varied widely in size: about 75% small, 20% medium and 5% large. Processed together, large messages held up the small ones behind them.</p>
+<p>I introduced partition grouping in Java and JavaScript, so messages of similar size are processed together and large ones no longer block the rest. Processing latency fell by 33% and throughput rose from 18,000 to 24,000 events an hour on the same infrastructure.</p></section><section id="apis" aria-labelledby="apis-h"><h2 id="apis-h">Compliance reporting APIs</h2><p>I designed and built RESTful Java APIs for several country compliance apps. Together they submit more than 800,000 pharmaceutical transaction reports a week.</p>
+<p>I also contributed to the design of event-driven features connected through GraphQL APIs and Kafka, with idempotent message handling so retries never create duplicate filings.</p></section><section id="quality" aria-labelledby="quality-h"><h2 id="quality-h">Data quality</h2><p>Transactions failed when they referenced product codes or trading partners the system didn’t recognise. I built automated master data and partner lookup services in Spring that fill in validated data first. Unknown-product errors fell by about 20%.</p>
+<p>I also delivered void transaction handling in Scala and JavaScript, processing more than 10,000 voids a month under US supply chain rules (DSCSA).</p></section><section id="reliability" aria-labelledby="reliability-h"><h2 id="reliability-h">Reliability and audit</h2><p>I fixed critical data-loss bugs affecting more than 1.5 million transactions a month, then added over 15 custom metrics with Grafana dashboards so similar problems show up before customers notice.</p>
+<p>For audits, I built a bulk export with Node.js, GraphQL and Handlebars templates rendered to PDF. Customers now generate more than 12,000 compliance PDFs a week.</p></section><section id="results" aria-labelledby="results-h"><h2 id="results-h">Results</h2><div class="table-wrap"><table><thead><tr><th scope="col">Measure</th><th scope="col">Result</th></tr></thead><tbody><tr><td>Weekly regulatory reports through my APIs</td><td>800,000+</td></tr><tr><td>Message processing latency</td><td>33% lower</td></tr><tr><td>Throughput</td><td>18K → 24K events an hour</td></tr><tr><td>Unknown-product transaction errors</td><td>About 20% fewer</td></tr><tr><td>Compliance PDFs generated</td><td>12,000+ a week</td></tr><tr><td>Void transactions processed</td><td>10,000+ a month</td></tr><tr><td>Transactions protected from data loss</td><td>1.5M+ a month</td></tr></tbody></table></div></section>
+        <a class="next" href="/work/project-spring"><small>Next case study</small><span>Project Spring: an AI agent that equips every new hire</span></a>
+      </div>
+    </div>
+  </main>
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <h2 class="contact__title" id="contact-title">Want to go deeper on this? Let’s talk.</h2>
+      <div class="contact__row">
+        <a class="contact__email" id="email" href="mailto:siddharthjadhav3004@gmail.com">siddharthjadhav3004@gmail.com</a>
+        <button class="btn" id="copy" type="button">Copy email</button>
+      </div>
+      <ul class="contact__links">
+        <li><a href="https://www.linkedin.com/in/siddharthjadhavcs" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/SiddharthJadhav99" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="/Siddharth-Jadhav-Resume.pdf" download>Resume (PDF)</a></li>
+      </ul>
+    </div>
+  </section>
+  <footer class="footer"><div class="wrap"><p>© <span class="year">2026</span> Siddharth Jadhav. Views are my own.</p><p>In Pune it’s <time id="clock">--:--</time></p></div></footer>
+</body>
+</html>

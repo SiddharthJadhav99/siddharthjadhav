@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>NGS-RSC, Siddharth Jadhav</title>
+  <meta name="description" content="How Siddharth Jadhav designed the offline-first architecture for Hershey’s field sales app, so reps can work all day without signal and lose nothing.">
+  <meta name="theme-color" content="#ECEEEA" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0E1012" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://siddharthjadhav.in/work/ngs-rsc">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://siddharthjadhav.in/work/ngs-rsc">
+  <meta property="og:title" content="NGS-RSC">
+  <meta property="og:description" content="How Siddharth Jadhav designed the offline-first architecture for Hershey’s field sales app, so reps can work all day without signal and lose nothing.">
+  <meta name="twitter:card" content="summary">
+  <script>document.documentElement.classList.add('js');try{const t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/main.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="progress" aria-hidden="true"><span id="progress"></span></div>
+  <header class="nav" id="nav">
+    <div class="wrap nav__inner">
+      <a class="nav__mark" href="/" aria-label="Siddharth Jadhav, home"><span class="nav__glyph" aria-hidden="true">SJ</span><span class="hide-sm">Siddharth Jadhav</span></a>
+      <nav aria-label="Site">
+        <ul class="nav__links">
+          <li><a href="/#work" aria-current="true">Work</a></li>
+          <li class="hide-sm"><a href="/#principles">Approach</a></li>
+          <li><a href="/#experience">Experience</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme" id="theme" type="button" aria-label="Switch to dark theme"><span class="theme__dot" aria-hidden="true"></span></button>
+    </div>
+  </header>
+  <main id="main">
+    <header class="cs-hero wrap">
+      <a class="back" href="/#work"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> All work</a>
+      <p class="cs-kicker">The Hershey Company, July 2026 to now</p>
+      <h1 class="cs-title">An offline-first app for field reps who work all day without signal</h1>
+      <p class="cs-lede">NGS-RSC (Retail Store Companion) is the app Hershey’s field sales reps use on iPads inside stores. Many work a full day with no network and only sync in the evening. I designed and built its offline architecture, and I’m the top committer among the ten engineers on the project.</p>
+      <dl class="facts"><div><dt>Role</dt><dd>Senior engineer, owner of the offline architecture</dd></div><div><dt>Users</dt><dd>1,200–1,500 field reps</dd></div><div><dt>Status</dt><dd>Production pilot with reps</dd></div><div><dt>Stack</dt><dd>React, TypeScript, Workbox, IndexedDB, NestJS, Prisma</dd></div></dl>
+    </header>
+    <div class="wrap cs-demo"><div class="demo" data-demo="offline">
+          <div class="demo__bar">
+            <p class="demo__title">Do a store visit with no network</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <button class="btn btn--sm" type="button" data-restart>Restart app</button>
+              <button class="btn btn--sm" type="button" data-reset>Reset</button>
+            </div>
+          </div>
+          <div class="demo__body">
+            <div class="device">
+              <div class="visit">
+                <div class="visit__head">
+                  <p class="visit__store">Store visit</p>
+                  <button class="net" type="button" role="switch" aria-checked="false" aria-label="Network"><span class="net__sw" aria-hidden="true"></span><span class="net__label">Offline</span></button>
+                </div>
+                <ul class="tasks">
+                  <li><button class="task" type="button" aria-pressed="false" data-op="shelf"><span class="task__box" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke-width="2"><path d="M2.5 6.2l2.3 2.3 4.7-5"/></svg></span><span class="task__label">Check shelf placement</span></button></li>
+                  <li><button class="task" type="button" aria-pressed="false" data-op="display"><span class="task__box" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke-width="2"><path d="M2.5 6.2l2.3 2.3 4.7-5"/></svg></span><span class="task__label">Log the seasonal display</span></button></li>
+                  <li><button class="task" type="button" aria-pressed="false" data-op="note"><span class="task__box" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke-width="2"><path d="M2.5 6.2l2.3 2.3 4.7-5"/></svg></span><span class="task__label">Add a note for next visit</span></button></li>
+                  <li><button class="task task--end" type="button" aria-pressed="false"><span class="task__label">End visit</span></button></li>
+                </ul>
+              </div>
+              <div class="queue">
+                <div class="queue__head"><span>Changes saved on this device</span><span><b class="queue__count">0</b> waiting</span></div>
+                <ul class="queue__list" aria-live="polite"></ul>
+                <p class="queue__empty">Tap a step. It updates instantly, even offline.</p>
+              </div>
+            </div>
+          </div>
+          <div class="demo__foot"><p class="demo__note" aria-live="polite">Offline. Tap the steps, then switch the network back on.</p></div>
+        </div></div>
+    <div class="wrap cs-body">
+      <nav class="toc" aria-label="On this page" data-spy><ol><li><a href="#context">Context</a></li><li><a href="#architecture">Offline architecture</a></li><li><a href="#decisions">Key decisions</a></li><li><a href="#bugs">Hard bugs</a></li><li><a href="#performance">Performance under load</a></li><li><a href="#platform">Platform and developer experience</a></li><li><a href="#results">Results</a></li><li><a href="#ai">How I work on it</a></li></ol></nav>
+      <div class="prose"><section id="context" aria-labelledby="context-h"><h2 id="context-h">Context</h2><p>A rep plans the day in a sibling routing app, then opens RSC for each store and works through four stages: a pre-visit brief with embedded Power BI insights, an assessment, planning and executing actions, and a recap.</p>
+<p>When I joined, the app had no offline support at all. A visit closed without signal was simply lost, which was the single biggest risk for the iPad pilot.</p>
+<p>Two constraints shaped everything: the routing app and RSC share one Postgres database with separate migration histories, and the two apps run on different origins and deploy independently.</p></section><section id="architecture" aria-labelledby="architecture-h"><h2 id="architecture-h">Offline architecture</h2><p>I split offline support into two layers, each doing the job it’s good at.</p>
+<h3>Layer 1: the service worker</h3>
+<ul><li>the app shell is precached, so the app opens with no network at all</li>
+<li>data reads try the network first and fall back to the last good response after five seconds</li>
+<li>mutable routes are never cached, which removed a whole class of stale-data bugs</li></ul>
+<h3>Layer 2: the query cache and the mutation queue</h3>
+<ul><li>visit state and notes are persisted to IndexedDB, so queued work survives the app being closed</li>
+<li>one shared helper updates every affected screen the moment a rep taps, and rolls back if the server later rejects the change</li>
+<li>queued changes replay one at a time, oldest first, so the server never sees “end visit” before “start visit”</li>
+<li>the app flushes the queue to disk before navigating away, and queued changes are exempt from cache expiry</li>
+<li>the server’s end-visit endpoint is idempotent, so a replay that runs twice is a harmless no-op</li></ul>
+<p>Connectivity comes from a short health-check probe rather than the browser’s online flag, because Safari on iPad reports “online” on captive or stalled networks.</p></section><section id="decisions" aria-labelledby="decisions-h"><h2 id="decisions-h">Key decisions</h2><div class="decisions"><details class="decision"><summary>Two offline layers</summary><div class="decision__body"><div><b>Instead of</b>One hand-written service worker holding everything</div><div><b>Why</b>Mutations need optimistic updates and typed rollbacks at the React level. Keeping the worker generic also means it can be extracted into a shared library.</div></div></details><details class="decision"><summary>A health-check probe for connectivity</summary><div class="decision__body"><div><b>Instead of</b>The browser’s navigator.onLine</div><div><b>Why</b>On iPad Safari it says “online” on captive or stalled networks. A probe with a short timeout tells the truth.</div></div></details><details class="decision"><summary>One global queue, replayed in order</summary><div class="decision__body"><div><b>Instead of</b>Per-visit queues, or replaying in parallel</div><div><b>Why</b>A rep can only have one active visit at a time, so ordering across visits matters. Parallel replay was getting end-before-start requests rejected.</div></div></details><details class="decision"><summary>Save instantly with “saved on this device”</summary><div class="decision__body"><div><b>Instead of</b>A holding screen until the queue drains</div><div><b>Why</b>Reps do several visits a day and get signal only in the evening. A blocking screen would stall the whole route.</div></div></details><details class="decision"><summary>Build the recap from data already on the device</summary><div class="decision__body"><div><b>Instead of</b>Three extra server calls to build the recap</div><div><b>Why</b>The on-device lists are already updated at tap time, so the recap works fully offline and has one source of truth.</div></div></details><details class="decision"><summary>Never put offline fixes behind feature flags</summary><div class="decision__body"><div><b>Instead of</b>Gating them like every other feature</div><div><b>Why</b>Flags fail closed when offline, which would switch the fix off exactly when it’s needed.</div></div></details></div></section><section id="bugs" aria-labelledby="bugs-h"><h2 id="bugs-h">Hard bugs</h2><h3>A visit that disappeared on Save</h3><p>A visit started and finished offline vanished when the rep tapped Save. The app queued “end visit” and immediately redirected to the routing app, so the write to disk never ran. On reopen, the queue replayed out of order and the server rejected the end. The fix combined four changes: flush before leaving, ordered replay, no expiry for queued changes, and an idempotent end-visit endpoint.</p>
+<h3>Three offline bugs with one cause</h3><p>Actions went missing, didn’t complete, and blocked the Next button, but only offline. All three came from screens refreshing only after the server confirmed a change, and offline the server never does. One shared helper that updates the screens at tap time closed all three.</p>
+<h3>Sign-in banners that shouldn’t appear</h3><p>Reps saw “Sign in again” about 86 minutes into a session, even though token refresh existed. Power BI returns 403 for an expired token and 401 for missing access, the reverse of what the code assumed, so refresh never fired. The server now reads Power BI’s own error header, and the client tells “sign in again” apart from “ask your admin”.</p>
+<h3>A failure inside someone else’s iframe</h3><p>A few reps lost an AI-generated narrative that only appears inside the embedded report. I ruled out the obvious causes by test rather than assumption, then added diagnostics and logging so the next comparison is based on evidence instead of guesses.</p></section><section id="performance" aria-labelledby="performance-h"><h2 id="performance-h">Performance under load</h2><p>A 500-user load test produced 16 HTTP 500 errors. I traced all 16 to one root cause: under load the database connection pool filled up, ordinary queries waited and succeeded, but transactions gave up after a two-second default wait.</p>
+<ul><li>I shipped a fix that gives transactions a realistic wait budget and one retry on that specific error, verified against more than 1,300 server unit tests</li>
+<li>I prepared a second fix with two indexes, backed by query plans showing a full table scan that slowed from about 80 ms at rest to around a second under load</li>
+<li>I sized the real constraint as a capacity model: pool size, times instances, times both apps sharing the database, against the database’s connection limit</li></ul></section><section id="platform" aria-labelledby="platform-h"><h2 id="platform-h">Platform and developer experience</h2><p>Before features could ship, the app needed a working path to production. I built the deploy pipeline, an opt-in rollback job, feature flags and an end-to-end test coverage harness, then contributed the reusable pieces back to Hershey’s shared project template. Three projects now use them.</p>
+<p>The first deploy was blocked by an identity setting outside the repo: tokens were issued in an older format than the auth layer expected. Finding it took evidence from the deploy logs, and it’s now documented so nobody loses a week to it again.</p>
+<p>I also made onboarding easier: a new engineer can create a personal database schema, load a safe, repeatable seed, and test every feature from one written plan.</p></section><section id="results" aria-labelledby="results-h"><h2 id="results-h">Results</h2><div class="table-wrap"><table><thead><tr><th scope="col">Measure</th><th scope="col">Before</th><th scope="col">After</th></tr></thead><tbody><tr><td>Visits closed fully offline</td><td>Lost (reproduced)</td><td>0 lost in testing</td></tr><tr><td>App launch with no network</td><td>Blank page</td><td>Opens from cache</td></tr><tr><td>Offline action bugs</td><td>3 open</td><td>Closed by one shared helper</td></tr><tr><td>Recap server calls per visit</td><td>3</td><td>0 for the current visit</td></tr><tr><td>Unneeded sign-in banners after token expiry</td><td>Every time</td><td>Silent refresh</td></tr><tr><td>HTTP 500s in a 500-user load test</td><td>16, one root cause</td><td>Fix shipped, re-test pending</td></tr><tr><td>Deploy, rollback and test tooling</td><td>This app only</td><td>Reused by three projects</td></tr></tbody></table></div><p>The offline architecture, the deploy pipeline and the shared response format for read endpoints were designed and built by me. Most visit-stage features were built against product tickets, with teammates extending several of them since.</p></section><section id="ai" aria-labelledby="ai-h"><h2 id="ai-h">How I work on it</h2><p>I use Claude Code as a coding agent with written project memory. Each story’s non-obvious decisions, rejected options and environment gotchas are recorded and reused in later sessions. The agent proposes and implements; it never deploys or merges on its own, and every merge request is still reviewed.</p></section>
+        <a class="next" href="/work/compliance-events"><small>Next case study</small><span>Compliance event processing at TraceLink</span></a>
+      </div>
+    </div>
+  </main>
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <h2 class="contact__title" id="contact-title">Want to go deeper on this? Let’s talk.</h2>
+      <div class="contact__row">
+        <a class="contact__email" id="email" href="mailto:siddharthjadhav3004@gmail.com">siddharthjadhav3004@gmail.com</a>
+        <button class="btn" id="copy" type="button">Copy email</button>
+      </div>
+      <ul class="contact__links">
+        <li><a href="https://www.linkedin.com/in/siddharthjadhavcs" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/SiddharthJadhav99" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="/Siddharth-Jadhav-Resume.pdf" download>Resume (PDF)</a></li>
+      </ul>
+    </div>
+  </section>
+  <footer class="footer"><div class="wrap"><p>© <span class="year">2026</span> Siddharth Jadhav. Views are my own.</p><p>In Pune it’s <time id="clock">--:--</time></p></div></footer>
+</body>
+</html>

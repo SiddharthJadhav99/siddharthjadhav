@@ -3,24 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Siddharth Jadhav, software engineer for AI and data systems</title>
-  <meta name="description" content="Siddharth Jadhav builds AI agents, event pipelines and data platforms that run in production. Software engineer at The Hershey Company, Pune.">
-  <meta name="theme-color" content="#F2F3F0" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#111315" media="(prefers-color-scheme: dark)">
+  <title>Siddharth Jadhav, full-stack senior engineer for AI and distributed systems</title>
+  <meta name="description" content="Siddharth Jadhav is a Senior Software Development Engineer at The Hershey Company in Pune, building AI agents, offline-first apps and event-driven systems that hold up in production.">
+  <meta name="theme-color" content="#ECEEEA" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0E1012" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://siddharthjadhav.in/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://siddharthjadhav.in/">
-  <meta property="og:title" content="Siddharth Jadhav, software engineer">
-  <meta property="og:description" content="AI agents, event pipelines and data platforms that run in production.">
+  <meta property="og:title" content="Siddharth Jadhav, full-stack senior engineer">
+  <meta property="og:description" content="AI agents, offline-first apps and event-driven systems that hold up in production.">
   <meta name="twitter:card" content="summary">
-  <script>
-    document.documentElement.classList.add('js');
-    try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
-  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Siddharth Jadhav","jobTitle":"Senior Software Development Engineer","worksFor":{"@type":"Organization","name":"The Hershey Company"},"address":{"@type":"PostalAddress","addressLocality":"Pune","addressCountry":"IN"},"url":"https://siddharthjadhav.in/","sameAs":["https://www.linkedin.com/in/siddharthjadhavcs","https://github.com/SiddharthJadhav99"]}</script>
+  <script>document.documentElement.classList.add('js');try{const t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..700&family=Hanken+Grotesk:wght@400..600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
   <script src="/main.js" defer></script>
 </head>
@@ -30,12 +28,12 @@
 
   <header class="nav" id="nav">
     <div class="wrap nav__inner">
-      <a class="nav__mark" href="#top" aria-label="Siddharth Jadhav, back to top">SJ</a>
-      <nav aria-label="Sections">
+      <a class="nav__mark" href="/" aria-label="Siddharth Jadhav, home"><span class="nav__glyph" aria-hidden="true">SJ</span><span class="hide-sm">Siddharth Jadhav</span></a>
+      <nav aria-label="Sections" data-spy>
         <ul class="nav__links">
           <li><a href="#work">Work</a></li>
+          <li class="hide-sm"><a href="#principles">Approach</a></li>
           <li><a href="#experience">Experience</a></li>
-          <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -44,328 +42,274 @@
   </header>
 
   <main id="main">
-    <!-- Hero -->
-    <section class="hero" id="top" aria-labelledby="hero-name">
-      <canvas class="hero__stream" id="stream" aria-hidden="true"></canvas>
-      <div class="wrap hero__inner">
-        <p class="hero__now"><span class="pulse" aria-hidden="true"></span>Software Development Engineer at The Hershey Company</p>
-        <h1 class="hero__name" id="hero-name" aria-label="Siddharth Jadhav">
-          <span class="split" aria-hidden="true">Siddharth</span>
-          <span class="split" aria-hidden="true">Jadhav</span>
-        </h1>
-        <p class="hero__lede">
-          I build <span class="rotator" id="rotator" aria-hidden="true"><span>agentic AI workflows</span></span><span class="sr-only">agentic AI workflows, event pipelines and data platforms</span>
-          <br>that hold up in production.
-        </p>
-        <div class="hero__actions">
-          <a class="btn btn--solid" href="#work">See my work</a>
-          <a class="btn" href="#contact">Get in touch</a>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__grid" aria-hidden="true"></div>
+      <div class="cross" aria-hidden="true" hidden><span class="cross__x"></span><span class="cross__y"></span><span class="cross__label"></span></div>
+      <div class="wrap">
+        <p class="hero__name">Siddharth Jadhav <span class="pill"><span class="pulse" aria-hidden="true"></span>Senior Software Development Engineer, The Hershey Company</span></p>
+        <h1 class="hero__title" id="hero-title">Full-stack senior engineer, AI and distributed systems.</h1>
+        <div class="hero__body">
+          <p class="hero__lede">I build AI agents and offline-first apps that people rely on at work, and I make them dependable in production. My rule of thumb: give the LLM the judgment calls, and make everything else plain, testable code.</p>
+          <div class="hero__actions">
+            <a class="btn btn--solid" href="#work">See selected work</a>
+            <a class="btn" href="/Siddharth-Jadhav-Resume.pdf" download>Resume (PDF)</a>
+          </div>
         </div>
-      </div>
-      <div class="wrap hero__meta">
-        <p class="hero__hint" id="stream-hint">Each dot is an event moving through a partition. Move your cursor across to add load.</p>
-        <p class="hero__count" aria-live="off"><span id="stream-count">0</span> events processed</p>
+        <ul class="hero__facts">
+          <li><strong>Now</strong> AI agents and field sales apps at Hershey</li>
+          <li><strong>Before</strong> TraceLink and Datametica</li>
+          <li><strong>Based in</strong> Pune, India</li>
+        </ul>
       </div>
     </section>
 
-    <!-- Stack marquee -->
-    <div class="marquee" aria-label="Technologies I work with">
-      <div class="marquee__track">
-        <ul>
-          <li>Python</li><li>LangGraph</li><li>Microsoft Agent Framework</li><li>Java</li><li>Spring Boot</li><li>Kafka</li><li>GraphQL</li><li>Apache Beam</li><li>BigQuery</li><li>Google Cloud</li><li>AWS</li><li>Docker</li><li>Kubernetes</li><li>Scala</li><li>SQL</li>
-        </ul>
-        <ul aria-hidden="true">
-          <li>Python</li><li>LangGraph</li><li>Microsoft Agent Framework</li><li>Java</li><li>Spring Boot</li><li>Kafka</li><li>GraphQL</li><li>Apache Beam</li><li>BigQuery</li><li>Google Cloud</li><li>AWS</li><li>Docker</li><li>Kubernetes</li><li>Scala</li><li>SQL</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Work -->
+    <!-- Selected work -->
     <section class="section wrap" id="work" aria-labelledby="work-title">
       <div class="section__head">
         <h2 class="section__title reveal" id="work-title">Selected work</h2>
-        <p class="section__intro reveal">Systems I designed or built, with the numbers they moved. Open any card for the full story.</p>
-        <div class="filters reveal" role="group" aria-label="Filter projects">
-          <button type="button" class="chip" aria-pressed="true" data-filter="all">All</button>
-          <button type="button" class="chip" aria-pressed="false" data-filter="ai">AI</button>
-          <button type="button" class="chip" aria-pressed="false" data-filter="streaming">Streaming</button>
-          <button type="button" class="chip" aria-pressed="false" data-filter="data">Data</button>
-          <button type="button" class="chip" aria-pressed="false" data-filter="apis">APIs</button>
-        </div>
+        <p class="section__intro reveal">Three systems, each with a live model you can poke at. They’re simplified, but the behaviour is the real design.</p>
       </div>
 
-      <ul class="cases" id="cases">
-        <li class="case case--feature reveal" data-tags="ai">
-          <button class="case__btn" type="button" aria-haspopup="dialog">
-            <span class="case__org">The Hershey Company, 2026</span>
-            <span class="case__title">Agentic workflows for business decisions</span>
-            <span class="case__sum">AI agents that carry multi-step business decisions from start to finish, wired into production systems instead of living in a demo.</span>
-            <span class="case__viz" aria-hidden="true">
-              <svg viewBox="0 0 400 120" class="agent-graph">
-                <path class="edge" d="M40 60 C 100 60, 110 25, 170 25"/><path class="edge" d="M40 60 C 100 60, 110 95, 170 95"/>
-                <path class="edge" d="M190 25 C 250 25, 260 60, 320 60"/><path class="edge" d="M190 95 C 250 95, 260 60, 320 60"/>
-                <path class="edge edge--loop" d="M180 35 C 200 55, 200 70, 180 85"/>
-                <circle class="node" cx="32" cy="60" r="8"/><circle class="node" cx="180" cy="25" r="8"/><circle class="node" cx="180" cy="95" r="8"/><circle class="node node--end" cx="330" cy="60" r="10"/>
-                <circle class="token" r="4"><animateMotion dur="3.2s" repeatCount="indefinite" path="M32 60 C 100 60, 110 25, 180 25 C 250 25, 260 60, 330 60"/></circle>
-                <circle class="token token--b" r="4"><animateMotion dur="3.2s" begin="1.6s" repeatCount="indefinite" path="M32 60 C 100 60, 110 95, 180 95 C 250 95, 260 60, 330 60"/></circle>
-              </svg>
-            </span>
-            <span class="case__tags">Python, Microsoft Agent Framework, LangGraph, ML in production</span>
-            <span class="case__open">Read case study</span>
-          </button>
-          <div class="case__detail" hidden>
-            <h3>The problem</h3>
-            <p>Complex decisions and business processes depended on people moving information between systems and making the same judgment calls by hand.</p>
-            <h3>What I’m building</h3>
-            <p>Agentic workflows built with Microsoft Agent Framework and LangGraph. Agents plan the steps, call tools and internal systems, and hand off to each other, with machine learning models integrated where predictions drive the decision.</p>
-            <h3>How I keep it production grade</h3>
-            <p>Agents are treated like any other service: observable, testable, and owned. I work across teams so the workflows stay fast, reliable and maintainable rather than fragile prototypes.</p>
-            <p class="note">Details are kept general because this work is confidential.</p>
+      <!-- Project Spring -->
+      <article class="feature">
+        <div class="feature__text reveal">
+          <p class="feature__org">The Hershey Company, 2026</p>
+          <h3 class="feature__name"><a href="/work/project-spring">Project Spring: an AI agent that equips every new hire</a></h3>
+          <p class="feature__sum">A manager describes a new hire in chat. The agent finds what similar teammates use, recommends equipment, gets approval, and places real ServiceNow orders, in a few minutes instead of days of tickets.</p>
+          <ul class="results">
+            <li><b>5 → 2</b><span>LLM agents, after I replaced the LLM router with a fixed workflow</span></li>
+            <li><b>~70%</b><span>fewer LLM calls per onboarding <span class="tag tag--est">est.</span></span></li>
+            <li><b>~90%</b><span>faster steps outside the chat <span class="tag tag--est">est.</span></span></li>
+          </ul>
+          <p class="stack">Python, Microsoft Agent Framework, Azure OpenAI, FastAPI, React, Azure API Management, OPA, Bicep</p>
+          <p class="feature__link"><a class="link-arrow" href="/work/project-spring">Read the case study <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+        </div>
+        <div class="demo reveal" data-demo="agent">
+          <div class="demo__bar">
+            <p class="demo__title">How a request moves through the agent</p>
+            <div class="seg" role="group" aria-label="Architecture">
+              <button type="button" data-mode="before" aria-pressed="true">Before</button>
+              <button type="button" data-mode="after" aria-pressed="false">After</button>
+            </div>
           </div>
-        </li>
+          <div class="demo__body">
+            <div class="graph-wrap"><svg class="graph" viewBox="0 0 640 300" role="img" aria-label="Agent workflow diagram. Before: an LLM orchestrator routes between five LLM agents. After: two LLM agents talk to the manager and four code steps do the rest."></svg></div>
+            <div class="meters">
+              <div class="meter"><span class="meter__k">LLM calls this run</span><span class="meter__v" data-m="calls">0</span></div>
+              <div class="meter"><span class="meter__k">Agents using an LLM</span><span class="meter__v" data-m="agents">5</span></div>
+              <div class="meter"><span class="meter__k">Time outside chat (est.)</span><span class="meter__v" data-m="time">–</span></div>
+            </div>
+          </div>
+          <div class="demo__foot">
+            <div class="legend"><span><i class="l-llm"></i>LLM</span><span><i class="l-code"></i>Code</span><span><i class="l-human"></i>Person</span></div>
+            <button class="btn btn--sm" type="button" data-run>Run a request</button>
+            <p class="demo__note" aria-live="polite"></p>
+          </div>
+        </div>
+      </article>
 
-        <li class="case reveal" data-tags="streaming">
-          <button class="case__btn" type="button" aria-haspopup="dialog">
-            <span class="case__org">TraceLink, 2025</span>
-            <span class="case__metric"><span data-count="33">33</span>%</span>
-            <span class="case__metric-label">lower message processing latency</span>
-            <span class="case__title">Partition grouping for event streams</span>
-            <span class="case__sum">Throughput went from 18K to 24K events an hour without new hardware.</span>
-            <span class="case__tags">Java, JavaScript, Kafka</span>
-            <span class="case__open">Read case study</span>
-          </button>
-          <div class="case__detail" hidden>
-            <h3>The problem</h3>
-            <p>Messages arrived in very different sizes: roughly 5% large, 20% medium and 75% small. Processing them together meant large payloads slowed everything behind them.</p>
-            <h3>What I built</h3>
-            <p>A partition grouping approach in Java and JavaScript that routes messages by size class, so heavy messages stop blocking the light ones that make up most of the traffic.</p>
-            <h3>The result</h3>
-            <p>Message processing latency dropped 33% and throughput rose from 18K to 24K events an hour.</p>
+      <!-- NGS-RSC -->
+      <article class="feature feature--flip">
+        <div class="feature__text reveal">
+          <p class="feature__org">The Hershey Company, 2026</p>
+          <h3 class="feature__name"><a href="/work/ngs-rsc">NGS-RSC: an offline-first app for 1,200+ field sales reps</a></h3>
+          <p class="feature__sum">Reps run store visits on iPads, often with no signal all day. I designed the offline architecture so every tap is saved on the device first and syncs in order when the network comes back.</p>
+          <ul class="results">
+            <li><b>0</b><span>offline visits lost in testing, down from every visit closed fully offline</span></li>
+            <li><b>3</b><span>offline bugs closed at once by a single shared cache-update helper</span></li>
+            <li><b>16</b><span>HTTP 500s under a 500-user load test, all traced to one root cause and fixed</span></li>
+          </ul>
+          <p class="stack">React, TypeScript, Workbox, IndexedDB, TanStack Query, NestJS, Prisma, Postgres, Azure</p>
+          <p class="feature__link"><a class="link-arrow" href="/work/ngs-rsc">Read the case study <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+        </div>
+        <div class="demo reveal" data-demo="offline">
+          <div class="demo__bar">
+            <p class="demo__title">Do a store visit with no network</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <button class="btn btn--sm" type="button" data-restart>Restart app</button>
+              <button class="btn btn--sm" type="button" data-reset>Reset</button>
+            </div>
           </div>
-        </li>
+          <div class="demo__body">
+            <div class="device">
+              <div class="visit">
+                <div class="visit__head">
+                  <p class="visit__store">Store visit</p>
+                  <button class="net" type="button" role="switch" aria-checked="false" aria-label="Network"><span class="net__sw" aria-hidden="true"></span><span class="net__label">Offline</span></button>
+                </div>
+                <ul class="tasks">
+                  <li><button class="task" type="button" aria-pressed="false" data-op="shelf"><span class="task__box" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke-width="2"><path d="M2.5 6.2l2.3 2.3 4.7-5"/></svg></span><span class="task__label">Check shelf placement</span></button></li>
+                  <li><button class="task" type="button" aria-pressed="false" data-op="display"><span class="task__box" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke-width="2"><path d="M2.5 6.2l2.3 2.3 4.7-5"/></svg></span><span class="task__label">Log the seasonal display</span></button></li>
+                  <li><button class="task" type="button" aria-pressed="false" data-op="note"><span class="task__box" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke-width="2"><path d="M2.5 6.2l2.3 2.3 4.7-5"/></svg></span><span class="task__label">Add a note for next visit</span></button></li>
+                  <li><button class="task task--end" type="button" aria-pressed="false"><span class="task__label">End visit</span></button></li>
+                </ul>
+              </div>
+              <div class="queue">
+                <div class="queue__head"><span>Changes saved on this device</span><span><b class="queue__count">0</b> waiting</span></div>
+                <ul class="queue__list" aria-live="polite"></ul>
+                <p class="queue__empty">Tap a step. It updates instantly, even offline.</p>
+              </div>
+            </div>
+          </div>
+          <div class="demo__foot"><p class="demo__note" aria-live="polite">Offline. Tap the steps, then switch the network back on.</p></div>
+        </div>
+      </article>
 
-        <li class="case reveal" data-tags="apis streaming">
-          <button class="case__btn" type="button" aria-haspopup="dialog">
-            <span class="case__org">TraceLink, 2024–2026</span>
-            <span class="case__metric"><span data-count="800">800</span>K+</span>
-            <span class="case__metric-label">regulatory reports submitted every week</span>
-            <span class="case__title">Country compliance reporting APIs</span>
-            <span class="case__sum">Secure Java APIs that send pharmaceutical transaction reports to government and partner systems.</span>
-            <span class="case__tags">Java, REST, GraphQL, Kafka</span>
-            <span class="case__open">Read case study</span>
-          </button>
-          <div class="case__detail" hidden>
-            <h3>The problem</h3>
-            <p>Pharmaceutical companies must report transactions to regulators in each country, on time and without errors, at very high volume.</p>
-            <h3>What I built</h3>
-            <p>RESTful Java APIs for several country compliance apps, plus parts of the system design for event-driven features connected through GraphQL APIs and Kafka. Message handling is idempotent, so retries never create duplicate filings.</p>
-            <h3>The result</h3>
-            <p>More than 800,000 transaction reports a week flow securely to regulatory reporting systems.</p>
+      <!-- TraceLink -->
+      <article class="feature">
+        <div class="feature__text reveal">
+          <p class="feature__org">TraceLink, 2023–2026</p>
+          <h3 class="feature__name"><a href="/work/compliance-events">Compliance event processing for the pharma supply chain</a></h3>
+          <p class="feature__sum">APIs and event pipelines that report pharmaceutical transactions to regulators, where a lost or duplicated message is a compliance problem, not just a bug.</p>
+          <ul class="results">
+            <li><b>800K+</b><span>transaction reports submitted every week</span></li>
+            <li><b>33%</b><span>lower message processing latency with partition grouping</span></li>
+            <li><b>18K → 24K</b><span>events per hour, on the same infrastructure</span></li>
+          </ul>
+          <p class="stack">Java, Spring, Kafka, GraphQL, Node.js, Scala, PostgreSQL, Grafana</p>
+          <p class="feature__link"><a class="link-arrow" href="/work/compliance-events">Read the case study <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+        </div>
+        <div class="demo reveal" data-demo="partitions">
+          <div class="demo__bar">
+            <p class="demo__title">Mixed message sizes: 75% small, 20% medium, 5% large</p>
+            <div class="seg" role="group" aria-label="Partitioning">
+              <button type="button" data-mode="single" aria-pressed="true">One partition</button>
+              <button type="button" data-mode="grouped" aria-pressed="false">Grouped</button>
+            </div>
           </div>
-        </li>
+          <div class="demo__body">
+            <canvas class="lanes" aria-label="Animation of messages queuing behind a worker. With grouping, large messages move to their own lane." role="img"></canvas>
+            <div class="meters">
+              <div class="meter"><span class="meter__k">Measured throughput</span><span class="meter__v" data-m="tput">18K/h</span></div>
+              <div class="meter"><span class="meter__k">Measured latency</span><span class="meter__v" data-m="lat">Baseline</span></div>
+              <div class="meter"><span class="meter__k">Avg wait in this model</span><span class="meter__v" data-m="wait">0.0 s</span></div>
+            </div>
+          </div>
+          <div class="demo__foot"><p class="demo__note" aria-live="polite"></p></div>
+        </div>
+      </article>
+    </section>
 
-        <li class="case reveal" data-tags="data">
-          <button class="case__btn" type="button" aria-haspopup="dialog">
-            <span class="case__org">Datametica, 2022–2023</span>
-            <span class="case__metric"><span data-count="2">2</span>TB+</span>
-            <span class="case__metric-label">moved from 50+ tables into BigQuery</span>
-            <span class="case__title">Condor ingestion framework</span>
-            <span class="case__sum">One Apache Beam framework that ingests from Oracle, Snowflake and MSSQL into Google Cloud.</span>
-            <span class="case__tags">Java, Apache Beam, Dataflow, BigQuery</span>
-            <span class="case__open">Read case study</span>
-          </button>
-          <div class="case__detail" hidden>
-            <h3>The problem</h3>
-            <p>Each migration to BigQuery meant writing new pipeline code per source database and per table.</p>
-            <h3>What I built</h3>
-            <p>A reusable ingestion framework in Java on Apache Beam, running on Google Cloud Dataflow, that handles Oracle, Snowflake and MSSQL sources.</p>
-            <h3>The result</h3>
-            <p>Over 2TB of data across 50+ tables ingested into BigQuery. I later trained 80+ colleagues on Beam and Dataflow, which earned Trainer of the Quarter.</p>
-          </div>
+    <!-- Earlier work -->
+    <section class="section wrap" aria-labelledby="earlier-title">
+      <div class="section__head">
+        <h2 class="section__title reveal" id="earlier-title">More shipped work</h2>
+        <p class="section__intro reveal">Smaller projects from TraceLink and Datametica, each with the number that mattered.</p>
+      </div>
+      <ul class="cards" data-stagger>
+        <li class="card reveal">
+          <p class="card__org">Datametica</p>
+          <p class="card__num"><span data-count="2">2</span>TB+</p>
+          <p class="card__what">moved from 50+ tables</p>
+          <h3 class="card__name">Condor ingestion framework</h3>
+          <p class="card__text">One Apache Beam framework in Java that ingests Oracle, Snowflake and MSSQL into BigQuery.</p>
         </li>
-
-        <li class="case reveal" data-tags="data apis">
-          <button class="case__btn" type="button" aria-haspopup="dialog">
-            <span class="case__org">Datametica, 2022–2023</span>
-            <span class="case__metric"><span data-count="95">95</span>%</span>
-            <span class="case__metric-label">less manual effort</span>
-            <span class="case__title">Ascend.io workflow automation</span>
-            <span class="case__sum">Workflow setup went from 2–3 days to under 30 minutes.</span>
-            <span class="case__tags">Python, REST APIs</span>
-            <span class="case__open">Read case study</span>
-          </button>
-          <div class="case__detail" hidden>
-            <h3>The problem</h3>
-            <p>Creating data workflows in Ascend.io was manual and repetitive, taking two to three days each.</p>
-            <h3>What I built</h3>
-            <p>A plugin in Python that drives Ascend.io through its REST APIs and generates workflows automatically.</p>
-            <h3>The result</h3>
-            <p>Workflow creation dropped to under 30 minutes, cutting manual effort by 95%.</p>
-          </div>
+        <li class="card reveal">
+          <p class="card__org">Datametica</p>
+          <p class="card__num"><span data-count="95">95</span>%</p>
+          <p class="card__what">less manual effort</p>
+          <h3 class="card__name">Ascend.io workflow automation</h3>
+          <p class="card__text">A Python plugin that cut workflow setup from 2–3 days to under 30 minutes.</p>
         </li>
-
-        <li class="case reveal" data-tags="apis">
-          <button class="case__btn" type="button" aria-haspopup="dialog">
-            <span class="case__org">TraceLink, 2023–2024</span>
-            <span class="case__metric"><span data-count="12">12</span>K+</span>
-            <span class="case__metric-label">compliance PDFs generated every week</span>
-            <span class="case__title">Bulk compliance PDF export</span>
-            <span class="case__sum">Clients export audit-ready supply chain reports in bulk instead of one at a time.</span>
-            <span class="case__tags">Node.js, GraphQL, Handlebars, OpenHTMLToPDF</span>
-            <span class="case__open">Read case study</span>
-          </button>
-          <div class="case__detail" hidden>
-            <h3>The problem</h3>
-            <p>Supply chain audits needed professional transaction documents, and clients had no way to produce them at scale.</p>
-            <h3>What I built</h3>
-            <p>A bulk T2 export feature using Handlebars templates, Node.js and GraphQL, rendered to PDF with OpenHTMLToPDF.</p>
-            <h3>The result</h3>
-            <p>Clients generate more than 12,000 compliance PDFs a week for audit reporting.</p>
-          </div>
+        <li class="card reveal">
+          <p class="card__org">TraceLink</p>
+          <p class="card__num"><span data-count="12">12</span>K+</p>
+          <p class="card__what">compliance PDFs a week</p>
+          <h3 class="card__name">Bulk audit export</h3>
+          <p class="card__text">Node.js, GraphQL and Handlebars templates rendered to PDF for supply chain audits.</p>
         </li>
-
-        <li class="case reveal" data-tags="data">
-          <button class="case__btn" type="button" aria-haspopup="dialog">
-            <span class="case__org">TraceLink, 2024–2025</span>
-            <span class="case__metric">~<span data-count="20">20</span>%</span>
-            <span class="case__metric-label">fewer unknown-product errors</span>
-            <span class="case__title">Master data auto-correction</span>
-            <span class="case__sum">Transactions get enriched with validated product and partner data before they fail.</span>
-            <span class="case__tags">Java, Spring</span>
-            <span class="case__open">Read case study</span>
-          </button>
-          <div class="case__detail" hidden>
-            <h3>The problem</h3>
-            <p>Transactions failed when they referenced product codes (NDCs) or partners the system didn’t recognise.</p>
-            <h3>What I built</h3>
-            <p>Automated Master Data NDC Update and Partner Master Lookup services in Java Spring that fill in validated data automatically.</p>
-            <h3>The result</h3>
-            <p>Unknown-NDC transaction errors fell by about 20%. Separately, I fixed data-loss bugs affecting 1.5M+ monthly transactions and added 15+ Grafana metrics to catch issues early.</p>
-          </div>
+        <li class="card reveal">
+          <p class="card__org">TraceLink</p>
+          <p class="card__num">~<span data-count="20">20</span>%</p>
+          <p class="card__what">fewer unknown-product errors</p>
+          <h3 class="card__name">Master data auto-correction</h3>
+          <p class="card__text">Spring services that fill in validated product and partner data before transactions fail.</p>
         </li>
       </ul>
+    </section>
 
-      <p class="empty" id="cases-empty" hidden>No projects in this category yet.</p>
-
-      <div class="building reveal">
-        <h3 class="building__title">Building in the open</h3>
-        <ul class="building__list">
-          <li>
-            <span class="building__name">dashboard.siddharthjadhav.in</span>
-            <span class="building__desc">A private control panel for my own tools and data.</span>
-            <span class="status">In progress</span>
-          </li>
-          <li>
-            <span class="building__name">invite.siddharthjadhav.in</span>
-            <span class="building__desc">Create an event, share a link, collect RSVPs.</span>
-            <span class="status">In progress</span>
-          </li>
-        </ul>
+    <!-- Principles -->
+    <section class="section wrap" id="principles" aria-labelledby="principles-title">
+      <div class="section__head">
+        <h2 class="section__title reveal" id="principles-title">How I build</h2>
+        <p class="section__intro reveal">The habits behind the numbers. Each one came from a real incident, and the case studies show where.</p>
       </div>
+      <ul class="principles" data-stagger>
+        <li class="principle reveal"><h3>LLMs where judgment lives</h3><p>Agents talk to people. Routing, lookups and orders are deterministic code that can be tested and can’t hallucinate.</p></li>
+        <li class="principle reveal"><h3>Evidence before change</h3><p>Traces, query plans and logs first, then the fix. I don’t re-propose a theory a test has already ruled out.</p></li>
+        <li class="principle reveal"><h3>Idempotent by default</h3><p>Migrations, seeds and replayed requests are all safe to run twice, because offline clients and retries will run them twice.</p></li>
+        <li class="principle reveal"><h3>One source of truth per rule</h3><p>A rule lives in one helper, so two screens can never disagree about it.</p></li>
+        <li class="principle reveal"><h3>Governance outside the agent</h3><p>Policy, moderation and identity live at a gateway, not inside prompts that a model can talk its way around.</p></li>
+        <li class="principle reveal"><h3>Leave a paved road</h3><p>Deploy, rollback and test tooling go back into the shared template, so the next team starts ahead.</p></li>
+      </ul>
+      <p class="section__intro reveal" style="margin-top:32px;max-width:62ch">I also work daily with AI coding agents. Conventions and decisions are written down so the agent, the reviewers and the next engineer all work from the same context.</p>
     </section>
 
     <!-- Experience -->
     <section class="section wrap" id="experience" aria-labelledby="exp-title">
       <div class="section__head">
         <h2 class="section__title reveal" id="exp-title">Experience</h2>
-        <p class="section__intro reveal">Four years across data engineering, regulated event systems, and now applied AI.</p>
+        <p class="section__intro reveal">Five years, from data pipelines to regulated event systems to AI agents in production.</p>
       </div>
-      <ol class="timeline" id="timeline">
-        <li class="timeline__fill" aria-hidden="true"><span id="timeline-fill"></span></li>
-        <li class="stop reveal">
-          <span class="stop__dot" aria-hidden="true"></span>
-          <p class="stop__when">Feb 2026 – now</p>
-          <h3 class="stop__role">Software Development Engineer</h3>
-          <p class="stop__org">The Hershey Company</p>
-          <p class="stop__text">Designing agentic AI workflows that automate complex decisions, and bringing machine learning models into production systems.</p>
+      <ol class="jobs" data-stagger>
+        <li class="job reveal">
+          <p class="job__when">Feb 2026 – now</p>
+          <div><h3 class="job__role">Senior Software Development Engineer</h3><p class="job__org">The Hershey Company, Pune</p></div>
+          <p class="job__text">Architected <a href="/work/project-spring">Project Spring</a>, an agentic IT provisioning workflow, then designed the offline-first architecture for <a href="/work/ngs-rsc">NGS-RSC</a>, the field sales app, where I’m the top committer.</p>
         </li>
-        <li class="stop reveal">
-          <span class="stop__dot" aria-hidden="true"></span>
-          <p class="stop__when">Sep 2023 – Feb 2026</p>
-          <h3 class="stop__role">Software Engineer I and II</h3>
-          <p class="stop__org">TraceLink, Pune</p>
-          <p class="stop__text">Compliance APIs, Kafka event processing, bulk PDF export and master data services for pharmaceutical supply chain reporting. Promoted to Engineer II in 2024.</p>
+        <li class="job reveal">
+          <p class="job__when">2023 – 2026</p>
+          <div><h3 class="job__role">Software Engineer II</h3><p class="job__org">TraceLink, Pune</p></div>
+          <p class="job__text"><a href="/work/compliance-events">Compliance APIs and Kafka event processing</a>, master data services, bulk PDF export, and data-loss fixes across 1.5M+ monthly transactions.</p>
         </li>
-        <li class="stop reveal">
-          <span class="stop__dot" aria-hidden="true"></span>
-          <p class="stop__when">Jan 2022 – Sep 2023</p>
-          <h3 class="stop__role">Associate Member of Technical Staff</h3>
-          <p class="stop__org">Datametica, Pune</p>
-          <p class="stop__text">Data ingestion on Apache Beam, workflow automation, and backend services for a Google Cloud marketplace product serving 100+ customer accounts. Rising Star Award.</p>
+        <li class="job reveal">
+          <p class="job__when">2022 – 2023</p>
+          <div><h3 class="job__role">Associate Member of Technical Staff</h3><p class="job__org">Datametica, Pune</p></div>
+          <p class="job__text">Apache Beam ingestion, Ascend.io automation, and backend services for a Google Cloud marketplace product serving 100+ customer accounts.</p>
         </li>
-        <li class="stop reveal">
-          <span class="stop__dot" aria-hidden="true"></span>
-          <p class="stop__when">2018 – 2022</p>
-          <h3 class="stop__role">B.Tech, Computer Engineering</h3>
-          <p class="stop__org">G. H. Raisoni College of Engineering and Management, Pune</p>
-          <p class="stop__text">CGPA 8.64.</p>
+        <li class="job reveal">
+          <p class="job__when">2018 – 2022</p>
+          <div><h3 class="job__role">B.Tech, Computer Engineering</h3><p class="job__org">G. H. Raisoni College of Engineering and Management, Pune</p></div>
+          <p class="job__text">CGPA 8.64.</p>
         </li>
       </ol>
-    </section>
-
-    <!-- About -->
-    <section class="section wrap about" id="about" aria-labelledby="about-title">
-      <div class="section__head">
-        <h2 class="section__title reveal" id="about-title">About</h2>
+      <div class="creds" data-stagger>
+        <div class="reveal"><h3>Certifications</h3><ul>
+          <li><a href="https://www.credly.com/badges/0607cac9-7429-40f5-8d12-6b64a082e277/public_url" target="_blank" rel="noopener">Certified SAFe 6 Practitioner</a></li>
+          <li>Google Cloud Associate Cloud Engineer</li>
+        </ul></div>
+        <div class="reveal"><h3>Recognition</h3><ul>
+          <li>Trainer of the Quarter, for training 80+ colleagues on Apache Beam and Dataflow</li>
+          <li>Rising Star Award, Datametica</li>
+        </ul></div>
+        <div class="reveal"><h3>Tools I reach for</h3><ul>
+          <li>Python, TypeScript, Java</li>
+          <li>React, NestJS, FastAPI, Spring Boot</li>
+          <li>Azure, Google Cloud, Kafka, Postgres</li>
+        </ul></div>
       </div>
-      <div class="about__grid">
-        <p class="about__lede reveal">I like the unglamorous part of engineering: making systems correct under load, fast when it matters, and easy for the next person to change. Lately that means giving AI agents the same reliability we expect from any other production service.</p>
-        <div class="about__cols">
-          <div class="reveal">
-            <h3 class="mini">Languages</h3>
-            <p>Python, Java, JavaScript, Scala, SQL</p>
-          </div>
-          <div class="reveal">
-            <h3 class="mini">AI and backend</h3>
-            <p>Microsoft Agent Framework, LangGraph, Spring Boot, GraphQL, Kafka, Apache Beam</p>
-          </div>
-          <div class="reveal">
-            <h3 class="mini">Cloud</h3>
-            <p>Google Cloud, AWS, Docker, Kubernetes</p>
-          </div>
-          <div class="reveal">
-            <h3 class="mini">Certifications</h3>
-            <p>
-              <a href="https://www.linkedin.com/in/siddharthjadhavcs" target="_blank" rel="noopener">Google Cloud Associate Cloud Engineer</a>,
-              <a href="https://www.credly.com/badges/0607cac9-7429-40f5-8d12-6b64a082e277/public_url" target="_blank" rel="noopener">SAFe 6 Practitioner</a>,
-              <a href="https://courses.cognitiveclass.ai/certificates/bc1ccd6fc1c7474e9ce365d98f029f6e" target="_blank" rel="noopener">AI and ML, Cognitive Class</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="contact" id="contact" aria-labelledby="contact-title">
-      <div class="wrap">
-        <h2 class="contact__title reveal" id="contact-title">Have a system that needs to work at scale? Let’s talk.</h2>
-        <div class="contact__row reveal">
-          <a class="contact__email magnetic" id="email" href="mailto:siddharthjadhav3004@gmail.com">siddharthjadhav3004@gmail.com</a>
-          <button class="btn" id="copy" type="button">Copy email</button>
-        </div>
-        <ul class="contact__links reveal">
-          <li><a href="https://www.linkedin.com/in/siddharthjadhavcs" target="_blank" rel="noopener">LinkedIn</a></li>
-          <li><a href="https://github.com/SiddharthJadhav99" target="_blank" rel="noopener">GitHub</a></li>
-          <li><a href="https://x.com/siddharth_png" target="_blank" rel="noopener">X</a></li>
-        </ul>
+      <div class="building" data-stagger>
+        <div class="build reveal"><span class="build__name">dashboard.siddharthjadhav.in</span><span class="build__text">A private control panel for my own tools and data.</span><span class="build__s">Building</span></div>
+        <div class="build reveal"><span class="build__name">invite.siddharthjadhav.in</span><span class="build__text">Create an event, share a link, collect RSVPs.</span><span class="build__s">Building</span></div>
       </div>
     </section>
   </main>
 
-  <footer class="footer wrap">
-    <p>© <span id="year">2026</span> Siddharth Jadhav</p>
-    <p>In Pune it’s <time id="clock">--:--</time></p>
-  </footer>
-
-  <dialog class="sheet" id="sheet" aria-labelledby="sheet-title">
-    <div class="sheet__inner">
-      <button class="sheet__close" type="button" id="sheet-close" aria-label="Close case study"></button>
-      <p class="sheet__org" id="sheet-org"></p>
-      <h2 class="sheet__title" id="sheet-title"></h2>
-      <p class="sheet__metric" id="sheet-metric"></p>
-      <div class="sheet__body" id="sheet-body"></div>
-      <p class="sheet__tags" id="sheet-tags"></p>
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <h2 class="contact__title reveal" id="contact-title">Building something that has to work in production? Let’s talk.</h2>
+      <div class="contact__row reveal">
+        <a class="contact__email" id="email" href="mailto:siddharthjadhav3004@gmail.com">siddharthjadhav3004@gmail.com</a>
+        <button class="btn" id="copy" type="button">Copy email</button>
+      </div>
+      <ul class="contact__links reveal">
+        <li><a href="https://www.linkedin.com/in/siddharthjadhavcs" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/SiddharthJadhav99" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://x.com/siddharth_png" target="_blank" rel="noopener">X</a></li>
+        <li><a href="/Siddharth-Jadhav-Resume.pdf" download>Resume (PDF)</a></li>
+      </ul>
     </div>
-  </dialog>
+  </section>
+  <footer class="footer"><div class="wrap"><p>© <span class="year">2026</span> Siddharth Jadhav. Views are my own.</p><p>In Pune it’s <time id="clock">--:--</time></p></div></footer>
 </body>
 </html>

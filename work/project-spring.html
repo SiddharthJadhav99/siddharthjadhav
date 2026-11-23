@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Project Spring, Siddharth Jadhav</title>
+  <meta name="description" content="How Siddharth Jadhav rebuilt an AI agent for new-hire IT provisioning at Hershey: five LLM agents down to two, with governance at the gateway.">
+  <meta name="theme-color" content="#ECEEEA" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0E1012" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://siddharthjadhav.in/work/project-spring">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://siddharthjadhav.in/work/project-spring">
+  <meta property="og:title" content="Project Spring">
+  <meta property="og:description" content="How Siddharth Jadhav rebuilt an AI agent for new-hire IT provisioning at Hershey: five LLM agents down to two, with governance at the gateway.">
+  <meta name="twitter:card" content="summary">
+  <script>document.documentElement.classList.add('js');try{const t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/main.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="progress" aria-hidden="true"><span id="progress"></span></div>
+  <header class="nav" id="nav">
+    <div class="wrap nav__inner">
+      <a class="nav__mark" href="/" aria-label="Siddharth Jadhav, home"><span class="nav__glyph" aria-hidden="true">SJ</span><span class="hide-sm">Siddharth Jadhav</span></a>
+      <nav aria-label="Site">
+        <ul class="nav__links">
+          <li><a href="/#work" aria-current="true">Work</a></li>
+          <li class="hide-sm"><a href="/#principles">Approach</a></li>
+          <li><a href="/#experience">Experience</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme" id="theme" type="button" aria-label="Switch to dark theme"><span class="theme__dot" aria-hidden="true"></span></button>
+    </div>
+  </header>
+  <main id="main">
+    <header class="cs-hero wrap">
+      <a class="back" href="/#work"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> All work</a>
+      <p class="cs-kicker">The Hershey Company, March to June 2026</p>
+      <h1 class="cs-title">An AI agent that equips every new hire, with the LLM only where a person is talking</h1>
+      <p class="cs-lede">Project Spring lets a manager set up a new hire’s IT equipment in one short chat. I was the primary architect: I took a five-agent prototype that guessed its way through the process and rebuilt it as a fixed workflow where language models handle conversation and code handles everything else.</p>
+      <dl class="facts"><div><dt>Role</dt><dd>Primary architect and top contributor</dd></div><div><dt>Team</dt><dd>3 engineers</dd></div><div><dt>Users</dt><dd>15–20 managers in the first rollout</dd></div><div><dt>Stack</dt><dd>Python, Microsoft Agent Framework, Azure OpenAI, FastAPI, React</dd></div></dl>
+    </header>
+    <div class="wrap cs-demo"><div class="demo" data-demo="agent">
+          <div class="demo__bar">
+            <p class="demo__title">How a request moves through the agent</p>
+            <div class="seg" role="group" aria-label="Architecture">
+              <button type="button" data-mode="before" aria-pressed="true">Before</button>
+              <button type="button" data-mode="after" aria-pressed="false">After</button>
+            </div>
+          </div>
+          <div class="demo__body">
+            <div class="graph-wrap"><svg class="graph" viewBox="0 0 640 300" role="img" aria-label="Agent workflow diagram. Before: an LLM orchestrator routes between five LLM agents. After: two LLM agents talk to the manager and four code steps do the rest."></svg></div>
+            <div class="meters">
+              <div class="meter"><span class="meter__k">LLM calls this run</span><span class="meter__v" data-m="calls">0</span></div>
+              <div class="meter"><span class="meter__k">Agents using an LLM</span><span class="meter__v" data-m="agents">5</span></div>
+              <div class="meter"><span class="meter__k">Time outside chat (est.)</span><span class="meter__v" data-m="time">–</span></div>
+            </div>
+          </div>
+          <div class="demo__foot">
+            <div class="legend"><span><i class="l-llm"></i>LLM</span><span><i class="l-code"></i>Code</span><span><i class="l-human"></i>Person</span></div>
+            <button class="btn btn--sm" type="button" data-run>Run a request</button>
+            <p class="demo__note" aria-live="polite"></p>
+          </div>
+        </div></div>
+    <div class="wrap cs-body">
+      <nav class="toc" aria-label="On this page" data-spy><ol><li><a href="#context">Context</a></li><li><a href="#problem">The problem with the first version</a></li><li><a href="#built">What I built</a></li><li><a href="#decisions">Key decisions</a></li><li><a href="#governance">Governance and security</a></li><li><a href="#problems">Hard problems</a></li><li><a href="#results">Results</a></li><li><a href="#next">What’s next</a></li></ol></nav>
+      <div class="prose"><section id="context" aria-labelledby="context-h"><h2 id="context-h">Context</h2><p>Before Project Spring, equipping a new hire meant manual tickets, guesswork about which laptop or peripherals the role needed, and days of back-and-forth with IT.</p>
+<p>The agent replaces that with one guided conversation. It:</p>
+<ul><li>collects six details about the new hire, including role, department, location and start date</li>
+<li>looks up what similar employees on the same team actually use in ServiceNow</li>
+<li>recommends equipment, falling back from peer data to a role map to a sensible default</li>
+<li>gets the manager’s approval in chat or by email through Microsoft Graph</li>
+<li>places real ServiceNow catalog orders and returns the request numbers</li></ul>
+<p>The whole flow takes about two to three minutes and ends with orders placed, grounded in real data rather than a generic checklist.</p></section><section id="problem" aria-labelledby="problem-h"><h2 id="problem-h">The problem with the first version</h2><p>The proof of concept used five LLM agents with an LLM orchestrator deciding who should act next. It demoed well and behaved unpredictably:</p>
+<ul><li>the orchestrator sometimes routed to the wrong agent or invented a handoff</li>
+<li>the approval agent occasionally reported an approval the manager never gave, or ended the session early when someone changed an item</li>
+<li>every step paid for an extra LLM round trip just to decide what came next, so runs were slow and costly</li></ul>
+<p>None of these were prompt problems. They came from letting a model make decisions that had a single correct answer.</p></section><section id="built" aria-labelledby="built-h"><h2 id="built-h">What I built</h2><p>I replaced the dynamic handoffs with a fixed workflow graph in Microsoft Agent Framework:</p>
+<ul><li><strong>Two LLM agents</strong>, used only where a human is in the conversation: one collects the new hire’s details, one handles approval.</li>
+<li><strong>Four code steps</strong> for the ServiceNow lookup, the recommendation, the ordering and the summary. They run in seconds, can be unit tested, and can’t hallucinate.</li>
+<li><strong>A code router</strong> that reads workflow state, so choosing the next step costs zero LLM calls.</li>
+<li><strong>Typed outputs</strong> with Pydantic. The approval agent returns a structured decision, and only an explicit approval can reach the ordering step. A rejection ends the run before any ticket exists.</li>
+<li><strong>A fresh workflow per session</strong>, so one manager’s conversation can never leak into another’s.</li></ul>
+<h3>Finding the right equipment</h3>
+<p>A new hire doesn’t exist in ServiceNow yet, so I pivoted the lookup to the hiring manager’s team. The lookup chains four steps: manager, then teammates with a similar job code, then the assets they hold, then the orderable catalog item for each model. Only active catalog items are considered, which stopped orders failing on retired hardware.</p></section><section id="decisions" aria-labelledby="decisions-h"><h2 id="decisions-h">Key decisions</h2><div class="decisions"><details class="decision"><summary>Route with code, not an LLM orchestrator</summary><div class="decision__body"><div><b>Instead of</b>An LLM deciding the next agent on every turn</div><div><b>Why</b>The next step always has one right answer. Code gets it right every time, instantly, and costs nothing.</div></div></details><details class="decision"><summary>Structured outputs for approval</summary><div class="decision__body"><div><b>Instead of</b>Parsing marker strings like “ASSETS_APPROVED” from model text</div><div><b>Why</b>Markers were fragile and the model could produce them without a real approval. A typed decision is validated before the workflow moves.</div></div></details><details class="decision"><summary>Look up peers by the manager’s team</summary><div class="decision__body"><div><b>Instead of</b>Looking up the new hire’s own record</div><div><b>Why</b>New hires aren’t in ServiceNow before day one. Their future teammates are the best signal for what they’ll need.</div></div></details><details class="decision"><summary>Fixed graph now, tool wrappers kept</summary><div class="decision__body"><div><b>Instead of</b>Keeping the dynamic handoff design for flexibility</div><div><b>Why</b>Reliability mattered more for v1. The tool wrappers stay so the workflow can later plug into a larger multi-agent setup.</div></div></details></div></section><section id="governance" aria-labelledby="governance-h"><h2 id="governance-h">Governance and security</h2><p>I designed the AI governance layer so policy lives outside the agents, where a model can’t argue its way past it:</p>
+<ul><li>all model traffic goes through Azure API Management, which applies content moderation and checks on both input and output</li>
+<li>Open Policy Agent makes the policy decisions, and each agent carries its own identity so rules can differ per agent</li>
+<li>private networking, managed identity and least-privilege role assignments, all defined in Bicep</li>
+<li>OpenTelemetry traces tied to each session, giving an end-to-end audit trail</li></ul>
+<p>I also wrote the governance implementation plan: a zero-trust design split into six phases that can each ship on their own.</p></section><section id="problems" aria-labelledby="problems-h"><h2 id="problems-h">Hard problems</h2><h3>An agent that approved things nobody approved</h3><p>Stricter prompt rules reduced it but didn’t remove it. Moving to a typed decision, with approval as the only path into ordering, removed the failure by construction.</p>
+<h3>Data that stores references, not names</h3><p>ServiceNow links users, assets, models and catalog items by reference. The four-step lookup resolves those references into items that can actually be ordered.</p>
+<h3>Corporate network quirks</h3><p>Traffic inspection on the corporate network broke TLS for the model client, so I added a custom certificate setup. A gateway URL quirk in the SDK needed a fix of its own.</p>
+<h3>Deploys that broke after server reboots</h3><p>The container runtime on the shared deploy server kept stale state after reboots, so I added a CI job that detects and repairs it automatically.</p></section><section id="results" aria-labelledby="results-h"><h2 id="results-h">Results</h2><div class="table-wrap"><table><thead><tr><th scope="col">Measure</th><th scope="col">Before</th><th scope="col">After</th></tr></thead><tbody><tr><td>LLM-backed agents</td><td>5, including the orchestrator</td><td>2</td></tr><tr><td>LLM calls per onboarding <span class="tag tag--est">est.</span></td><td>~15–19</td><td>~4–6</td></tr><tr><td>Time spent outside the chat <span class="tag tag--est">est.</span></td><td>~20–40 s</td><td>~1–3 s</td></tr><tr><td>Token cost per onboarding <span class="tag tag--est">est.</span></td><td>Baseline</td><td>~65–75% lower</td></tr><tr><td>Misroutes and invented handoffs</td><td>Recurring</td><td>Removed by design</td></tr><tr><td>Orders failing on retired hardware</td><td>Possible</td><td>Filtered out</td></tr><tr><td>Code removed in the refactor</td><td>–</td><td>~3,200 lines</td></tr><tr><td>Deploy failures after a reboot</td><td>Fixed by hand</td><td>Repaired automatically in CI</td></tr></tbody></table></div><p>Estimates are derived from the architecture, such as the number of model calls per run, not from formal benchmarks.</p><p>Teammates built the ServiceNow ordering APIs, single sign-on, email approvals, the evaluation suites and the telemetry exporters. The design described here, the lookup logic, the performance overhaul, the infrastructure and the governance work were mine.</p></section><section id="next" aria-labelledby="next-h"><h2 id="next-h">What’s next</h2><p>The pattern, a fixed workflow for business steps and a governed gateway for every model call, is set up to become the template for future Hershey agents, such as incident workflows and asset questions, under a larger multi-agent workflow.</p></section>
+        <a class="next" href="/work/ngs-rsc"><small>Next case study</small><span>NGS-RSC: an offline-first app for 1,200+ field sales reps</span></a>
+      </div>
+    </div>
+  </main>
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <h2 class="contact__title" id="contact-title">Want to go deeper on this? Let’s talk.</h2>
+      <div class="contact__row">
+        <a class="contact__email" id="email" href="mailto:siddharthjadhav3004@gmail.com">siddharthjadhav3004@gmail.com</a>
+        <button class="btn" id="copy" type="button">Copy email</button>
+      </div>
+      <ul class="contact__links">
+        <li><a href="https://www.linkedin.com/in/siddharthjadhavcs" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/SiddharthJadhav99" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="/Siddharth-Jadhav-Resume.pdf" download>Resume (PDF)</a></li>
+      </ul>
+    </div>
+  </section>
+  <footer class="footer"><div class="wrap"><p>© <span class="year">2026</span> Siddharth Jadhav. Views are my own.</p><p>In Pune it’s <time id="clock">--:--</time></p></div></footer>
+</body>
+</html>
